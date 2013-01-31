@@ -5,7 +5,7 @@
 ```
 $ git clone https://github.com/michaelbragg/dotfiles.git ~/.dotfiles && cd ~/.dotfiles
 $ chmod 755 scripts/bootstrap
-$ script/bootstrap
+$ scripts/bootstrap
 ```
 
 ### OSX
