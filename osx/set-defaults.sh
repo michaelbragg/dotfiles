@@ -7,43 +7,86 @@
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
-# Show the ~/Library folder.
+# Global Setup
+
+## Set computer name (as done via System Preferences → Sharing)
+sudo scutil --set ComputerName "MacBook Pro"
+sudo scutil --set HostName "MacBook Pro"
+sudo scutil --set LocalHostName "MacBook-Pro"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MacBook-Pro"
+
+## Menu bar: show remaining battery time (on pre-10.8); hide percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "NO"
+defaults write com.apple.menuextra.battery ShowTime -string "YES"
+
+## Show the ~/Library folder.
 chflags nohidden ~/Library
 
-# Set the Finder prefs for showing a few different volumes on the Desktop.
+## Set the Finder prefs for showing a few different volumes on the Desktop.
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
-# Expand save panel by default
+## Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+# Save to disk (not to iCloud) by default
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Screen
 
-# Disable shadow in screenshots
+## Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
+
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Laptop
 
-# Automatically illuminate built-in MacBook keyboard in low light
+## Automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool true
 # Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
 
 # Finder
 
-# Finder: show hidden files by default
+# Show icons for hard drives, servers, and removable media on the desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+
+## Finder: show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-# Finder: show all filename extensions
+## Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Avoid creating .DS_Store files on network volumes
+## Finder: show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+## Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+## Show the ~/Library folder
+chflags nohidden ~/Library
 
 # Mac App Store
 
-# Enable the WebKit Developer Tools in the Mac App Store
+## Enable the WebKit Developer Tools in the Mac App Store
 defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
-# Enable Debug Menu in the Mac App Store
+## Enable Debug Menu in the Mac App Store
 defaults write com.apple.appstore ShowDebugMenu -bool true
+
+# Dropbox
+
+## Remove Dropbox’s green checkmark icons in Finder
+file=/Applications/Dropbox.app/Contents/Resources/check.icns
+[ -e "$file" ] && mv -f "$file" "$file.bak"
+unset file
