@@ -1,37 +1,19 @@
 # Sample gitconfig
 #
 
-[hub]
-        protocol = https
 [user]
-        name = AUTHORNAME
-        email = AUTHOREMAIL
-        helper = osxkeychain
+  name = authorname
+  email = authoremail
+  helper = osxkeychain
 [alias]
-        co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributers = !$ZSH/bin/git-rank-contributers
-        count   = !git shortlog -sn
+    # credit: http://www.jukie.net/bart/blog/pimping-out-git-log
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+        # if someone has only the default settings, decent fallbacks are:
+        #       git log --decorate --color
+        #       git log --decorate --color --oneline
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+  ui = true
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
-[apply]
-        whitespace = nowarn
-[mergetool]
-        keepBackup = false
-[difftool]
-        prompt = false
-[help]
-        autocorrect = 1
+  excludesfile = ~/.gitignore
 [push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to surpress warning message
-        default = simple
+  default = simple
