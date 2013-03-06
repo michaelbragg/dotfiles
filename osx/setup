@@ -14,3 +14,16 @@ then
   ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
   exit
 fi
+
+# Install homebrew packages
+
+brew install grc coreutils spark
+
+# Check to see if git is installed by homebrew
+if [ $(which  git) != "/usr/local/bin/git" ]
+then
+ echo "Installing GIT"
+ brew install git
+fi
+
+exit 0
