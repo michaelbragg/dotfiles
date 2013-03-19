@@ -1,0 +1,1 @@
+alias apache-restart="sudo apachectl restart"
