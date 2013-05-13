@@ -1,0 +1,67 @@
+#!/bin/sh
+#
+#  Reduce the steps of updating dependencies
+#
+#  https://github.com/michaelbragg/dotfiles/blob/master/scripts/update
+#
+#  Michael Bragg  |  @michaelbragg  |  http://michaelbragg.net
+
+function help () {
+  echo "";
+  echo "update - A script to reduce the steps for updating dependencies";
+  echo "";
+  echo "    update     - Updates all dependencies";
+  echo "    update $1    - Updates individual dependency";
+  echo "";
+}
+
+#  Each dependencies cli update command
+
+function brewUpdate () {
+  brew update
+}
+
+function gemUpdate () {
+  gem update
+}
+
+function npmUpdate () {
+  npm update
+  npm update -g
+}
+
+# Decided which dependencies are to be updated
+
+function update () {
+  local str="$@"
+  case "$str" in
+    brew)
+      brewUpdate
+    ;;
+    gem)
+      gemUpdate
+    ;;
+    npm)
+      npmUpdate
+    ;;
+    *)
+      echo "Dependency not found";
+    ;;
+  esac
+}
+
+# One switch to rule the updates
+
+case "$1" in
+   update)
+    if [ $2 ]
+    then
+      update "$2"
+    else
+      brewUpdate && gemUpdate && npmUpdate
+    fi
+   ;;
+   *)
+      help
+   ;;
+esac
