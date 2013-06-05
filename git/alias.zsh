@@ -5,3 +5,4 @@ alias glg="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(
 alias gsh="git show"
 alias gs="git status"
 alias grm="git rm"
+alias grb="git rebase -i"
