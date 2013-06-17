@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# Manage MySQL server
+#
+# Backup MySQL server.
+
+function help () {
+  echo "mysql - A simple script that allows you to mange your MySQL database from the comandline."
+  echo ""
+  echo "    mysqldb backup                  - backs up whole MySQL database";
+  echo ""
+}
+
+# Set the location for the database dump
+outputdir=~/Downloads
+
+function backup () {
+  now="`date +'%Y-%m-%d_%H-%M-%S'`"
+  location=${outputdir}/localhost_${now}.sql
+  mysqldump --all-databases > ${location}
+  echo "Database backed up to ${location}";
+}
+
+
+case "$1" in
+  backup)
+    backup
+  ;;
+  *)
+    help
+  ;;
+esac
