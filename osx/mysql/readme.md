@@ -7,7 +7,7 @@ A small shell script to save time backing up your MySQL database.
 Open terminal and enter the commands:
 
 ```
-$ cd ~/.dotfiles/oxs/mysql
+$ cd ~/.dotfiles/osx/mysql
 $ mysqldb backup
 ```
 
