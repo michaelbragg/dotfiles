@@ -26,7 +26,7 @@ function backup () {
 function backupTable () {
   now="`date +'%Y-%m-%d_%H-%M-%S'`"
   location=${outputdir}/$1_${now}.sql
-  mysqldump --single-transaction $1 > ${location}
+  mysqldump -p -user=root --single-transaction $1 > ${location}
   echo "Database backed up to ${location}";
 }
 
