@@ -1,8 +1,10 @@
 #!/bin/sh
 #
-# Manage MySQL server
+#  Control the backup of mysql
 #
-# Backup MySQL server.
+#  https://github.com/michaelbragg/dotfiles/blob/master/osx/mysql/mysqldb
+#
+#  Michael Bragg  |  @michaelbragg  |  http://michaelbragg.net
 
 function help () {
   echo "mysql - A simple script that allows you to mange your MySQL database from the comandline."
@@ -21,10 +23,21 @@ function backup () {
   echo "Database backed up to ${location}";
 }
 
+function backupTable () {
+  now="`date +'%Y-%m-%d_%H-%M-%S'`"
+  location=${outputdir}/$1_${now}.sql
+  mysqldump -p -user=root --single-transaction $1 > ${location}
+  echo "Database backed up to ${location}";
+}
 
 case "$1" in
   backup)
-    backup
+    if [ $2 ]
+      then
+        backupTable "$2"
+      else
+        backup
+    fi
   ;;
   *)
     help
