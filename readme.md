@@ -12,6 +12,15 @@ $ scripts/bootstrap
 
 Run `osx/set-defaults.sh` and you'll be good to go.
 
+### ZSH
+
+Switch to using ZSH by default for Terminal:
+
+```
+chsh -s $(which zsh)
+```
+
+
 ## Credits
 
 Most of these dotfiles were built in-part by reading the following:
