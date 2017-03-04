@@ -5,6 +5,10 @@
   name = authorname
   email = authoremail
   helper = osxkeychain
+
+[credential]
+  helper = osxkeychain
+
 [alias]
     # credit: http://www.jukie.net/bart/blog/pimping-out-git-log
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -13,12 +17,24 @@
         #       git log --decorate --color --oneline
 [color]
   ui = true
+  diff = auto
+  status = auto
+  branch = auto
+
 [core]
   excludesfile = ~/.gitignore
+
 [push]
   default = simple
 
-#  Adds reminder on how to write better commit message
+[difftool "kdiff3"]
+  path = ~/Applications/kdiff3.app/Content/MacOS/kdiff3
+  keepBackup = false
+  prompt = false
 
-  [commit]
-    template = ~/.dotfiles/git/commit-template.txt
+[diff]
+  tool = kdiff3
+
+#  Adds reminder on how to write better commit message
+[commit]
+  template = ~/.dotfiles/git/commit-template.txt
