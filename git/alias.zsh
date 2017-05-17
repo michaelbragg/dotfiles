@@ -1,6 +1,8 @@
+alias gcl="git clone"
 alias ga="git add"
 alias gco="git checkout"
 alias gcm="git commit"
+alias gcv="git commit --no-verify"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gsh="git show"
 alias gs="git status"
