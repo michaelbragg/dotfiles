@@ -19,6 +19,9 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 defaults write com.apple.menuextra.battery ShowPercent -string "NO"
 defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
+# 24-Hour Time
+defaults write NSGlobalDomain AppleICUForce12HourTime -bool true
+
 ## Show the ~/Library folder.
 chflags nohidden ~/Library
 
@@ -68,6 +71,10 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # Restart for changes.
 killall Dock;killall SystemUIServer;killall Finder
 
+# Desktop & Screen Saver
+# ==============================================
+echo "Setting Desktop & Screen Saver preferences"
+
 # Dock
 # ==============================================
 echo "Setting Dock preferences"
@@ -107,6 +114,12 @@ echo "Setting Security & Privacy preferences"
 # Require password (immediately) after sleep or screen saver begins.
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Spotlight
+# ==============================================
+echo "Setting Spotlight preferences"
+
+# @TODO Remove 'Spotlight Suggestions' from Search Results.
 
 # Finder
 # May require `killall Finder` before these take effect
