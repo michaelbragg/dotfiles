@@ -100,6 +100,14 @@ defaults write com.apple.dock mru-spaces -bool false
 defaults write com.apple.dock wvous-bl-corner -int 2
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
+# Security & Privacy
+# ==============================================
+echo "Setting Security & Privacy preferences"
+
+# Require password (immediately) after sleep or screen saver begins.
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
 # Finder
 # May require `killall Finder` before these take effect
 
