@@ -87,6 +87,19 @@ defaults write com.apple.dock autohide -bool true
 # Restart dock for changes
 killall Dock
 
+# Mission Control
+# ==============================================
+echo "Setting Mission Control preferences"
+
+# Automatically rearrange Spaces beased on most recent use (true, false).
+defaults write com.apple.dock mru-spaces -bool false
+
+# Hot Corners
+
+# Bottom Left – Mission Control
+defaults write com.apple.dock wvous-bl-corner -int 2
+defaults write com.apple.dock wvous-bl-modifier -int 0
+
 # Finder
 # May require `killall Finder` before these take effect
 
