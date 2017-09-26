@@ -2,7 +2,49 @@
 #
 # Install casks
 
-software_list=( 1password adobe-reader adwaremedic atom caffeine ccleaner charles cheetsheet cyberduck dropbox firefox firefox-beta flux freeplane gemini gifrocket google-chrome google-chrome-canary google-drive google-hangouts google-nik-collection google-web-designer googleappengine handbrake imagealpha imageoptim kdiff3 keka licecap mamp miro-video-converter mongohub multifirefox openoffice opera opera-beta osxfuse screaming-frog-seo-spider sequel-pro skype slack spectacle spotify tuntap vagrant virtualbox vlc webkit-nightly xquartz );
+software_list=( 
+1password
+adobe-acrobat-reader
+adobe-creative-cloud
+atom
+ccleaner
+charles
+cheatsheet
+cyberduck
+dropbox
+firefox
+flux
+freeplane
+gemini
+gifrocket
+google-chrome
+google-hangouts
+google-nik-collection
+google-web-designer
+googleappengine
+handbrake
+imagealpha
+imageoptim
+kdiff3
+keka
+licecap
+mamp
+multifirefox
+openoffice
+opera
+osxfuse
+screaming-frog-seo-spider
+sequel-pro
+skype
+slack
+spectacle
+spotify
+tuntap
+vagrant
+virtualbox
+vlc
+xquartz
+);
 
 # Check we have software to Install
 # (Check arrag length)
