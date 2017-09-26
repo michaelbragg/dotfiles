@@ -49,6 +49,25 @@ defaults write com.apple.BezelServices kDim -bool true
 # Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
 
+# Dock
+# ==============================================
+echo "Setting Dock preferences"
+
+# Position (left, bottom, right)
+defaults write com.apple.dock orientation -string "right"
+
+# Icon Size (32)
+defaults write com.apple.dock tilesize -int 32
+
+# Set the Scale Effect to Minimize Windows (genie, scale, suck)
+defaults write com.apple.dock mineffect -string scale
+
+# Hide Show Dock
+defaults write com.apple.dock autohide -bool true
+
+# Restart dock for changes
+killall Dock
+
 # Finder
 # May require `killall Finder` before these take effect
 
