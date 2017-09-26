@@ -49,6 +49,25 @@ defaults write com.apple.BezelServices kDim -bool true
 # Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
 
+# General
+# ==============================================
+echo "Setting General preferences"
+
+# Use dark meny bar and dock (ligh, dark).
+defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
+
+# Automatically hide and show the menu bar (false, true).
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
+# Show scroll bars (WhenScrolling, Automatic, Always).
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
+
+# Click in the scroll bar to.
+# @TODO "Jump to the Spot that's clicked".
+
+# Restart for changes.
+killall Dock;killall SystemUIServer;killall Finder
+
 # Dock
 # ==============================================
 echo "Setting Dock preferences"
