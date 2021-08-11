@@ -19,3 +19,18 @@ setopt APPEND_HISTORY # adds history
 setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
 setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
+
+source $(brew --prefix)/share/antigen/antigen.zsh
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle heroku
+antigen bundle command-not-found
+#antigen bundle autojump
+#antigen bundle npm
+antigen bundle git-extras
+antigen bundle git-flow
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen apply
+
+plugins=(git npm github zsh-syntax-highlighting zsh-autosuggestions git-open)
