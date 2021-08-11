@@ -2,7 +2,7 @@
 #
 # Install casks
 
-software_list=( 
+software_list=(
 1password
 adobe-acrobat-reader
 adobe-creative-cloud
