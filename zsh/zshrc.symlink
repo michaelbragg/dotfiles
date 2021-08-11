@@ -49,3 +49,13 @@ do
 done
 
 unset config_files
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# added by travis gem
+[ -f /Users/michaelbragg/.travis/travis.sh ] && source /Users/michaelbragg/.travis/travis.sh
+
+if which ruby >/dev/null && which gem >/dev/null; then
+  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
