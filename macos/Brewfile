@@ -1,6 +1,7 @@
 # Brewfile
 
 # Tap
+tap 'homebrew/cask-fonts'
 
 # Cask
 cask 'alfred'
@@ -35,6 +36,7 @@ cask 'tripmode'
 cask 'visual-studio-code'
 cask 'vlc'
 cask 'zoom'
+cask 'jetbrainsmono'
 
 # Brew
 brew 'gh'
