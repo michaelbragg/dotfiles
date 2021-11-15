@@ -12,8 +12,8 @@ export PROJECTS=~/Sites
 #  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 #  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -49,13 +49,13 @@ do
 done
 
 unset config_files
-export PATH="/usr/local/opt/openssl/bin:$PATH"
+# export PATH="/usr/local/opt/openssl/bin:$PATH"
 
-# added by travis gem
-[ -f /Users/michaelbragg/.travis/travis.sh ] && source /Users/michaelbragg/.travis/travis.sh
+# # added by travis gem
+# [ -f /Users/michaelbragg/.travis/travis.sh ] && source /Users/michaelbragg/.travis/travis.sh
 
-if which ruby >/dev/null && which gem >/dev/null; then
-  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
-export PATH="/usr/local/opt/php@7.4/bin:$PATH"
-export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+# if which ruby >/dev/null && which gem >/dev/null; then
+#   PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+# fi
+# export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+# export PATH="/usr/local/opt/php@7.4/sbin:$PATH"

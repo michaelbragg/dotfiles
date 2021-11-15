@@ -77,7 +77,7 @@ killall Dock
 defaults write com.apple.screencapture "disable-shadow" -bool "true"
 
 # Set screenshot location
-mkdir -p ~/Downloads/Screensshots
+mkdir -p ~/Downloads/Screenshots
 defaults write com.apple.screencapture "location" -string "~/Downloads/Screenshots"
 
 ################################################################################
@@ -131,3 +131,12 @@ defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
 defaults write com.apple.desktopservices "DSDontWriteNetworkStores" -bool "true"
 
 killall Finder
+
+################################################################################
+# Peripherals                                                                  #
+################################################################################
+
+# Restart Required @TODO find comand to reset Bluetooth settings.
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse "MouseButtonMode" -string "TwoButton"
+
+# Show sound in memnu bar always

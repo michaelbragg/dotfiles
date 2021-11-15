@@ -2,12 +2,16 @@
 #
 
 [user]
-  name = authorname
+  name = Michael Bragg
   email = authoremail
-  helper = osxkeychain
+  signingkey = 032A48EB91A86B84
 
 [credential]
   helper = osxkeychain
+
+[github]
+  user = michaelbragg
+  token = xxxxxx
 
 [alias]
     # credit: http://www.jukie.net/bart/blog/pimping-out-git-log
@@ -38,3 +42,6 @@
 #  Adds reminder on how to write better commit message
 [commit]
   template = ~/.dotfiles/git/commit-template.txt
+
+[init]
+  defaultBranch = main

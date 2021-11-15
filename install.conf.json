@@ -13,7 +13,10 @@
   },
   {
     "link": {
+      "~/.brewfile": "macos/Brewfile",
+      "~/.composer/auth.json": "composer/auth.json",
       "~/.gitconfig": "git/gitconfig",
+      "~/.gitignore": "git/gitignore",
 			"~/.vimrc": "vim/vimrc",
 			"~/.zshrc": "zsh/zshrc"
     }
@@ -27,6 +30,25 @@
       [
         "git submodule update --init --recursive",
         "Installing submodules"
+      ],
+      [
+        "macos/set-defaults.sh"
+      ],
+      [
+        "brew bundle --file=~/.brewfile",
+        "Installing homebrew packages."
+      ],
+      [
+        "echo 'address=/.test/127.0.0.1' >> $(brew --prefix)/etc/dnsmasq.conf"
+      ],
+      [
+        "sudo mkdir -v /etc/resolver"
+      ],
+      [
+        "sudo bash -c 'echo \"nameserver 127.0.0.1\" > /etc/resolver/test'"
+      ],
+      [
+        "sudo brew services start dnsmasq"
       ]
     ]
   }

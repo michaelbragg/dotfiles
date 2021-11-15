@@ -1,0 +1,41 @@
+# Brewfile
+
+# Tap
+
+# Cask
+cask 'alfred'
+cask 'ccleaner'
+cask 'charles'
+cask 'cheatsheet'
+cask 'clamxav'
+cask 'cyberduck'
+cask 'discord'
+cask 'docker'
+cask 'dropbox'
+cask 'element'
+cask 'homebrew/cask-drivers/elgato-control-center'
+cask 'firefox'
+cask 'fontstand'
+cask 'google-chrome'
+cask 'google-drive'
+cask 'grammarly'
+cask 'imagealpha'
+cask 'imageoptim'
+cask 'kdiff3'
+cask 'libreoffice'
+cask 'opera'
+cask 'poedit'
+cask 'postman'
+cask 'rectangle'
+cask 'screaming-frog-seo-spider'
+cask 'skype'
+cask 'slack'
+cask 'spotify'
+cask 'tripmode'
+cask 'visual-studio-code'
+cask 'vlc'
+cask 'zoom'
+
+# Brew
+brew 'gh'
+brew 'dnsmasq'
